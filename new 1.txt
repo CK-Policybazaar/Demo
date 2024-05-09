@@ -1,0 +1,34 @@
+1. open github/bitbucket account with mail id
+2. download git
+3. once installed , do these 2 things in cmd to setup git
+   i) git config --global user.name "your_user_name"
+   ii) git config --global user.email "your_email_registered_in_github"
+
+
+Generate an SSH Key Pair 
+
+go to cmd and type : ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+Open with notepad++ the pub file and paste the SSH key in github.
+
+---
+Google Sheets Python Connection : 
+Create new project in Google cloud .
+Go to APIs
+Enable Google sheets and Google Drive APIs
+Then go to credentials and create Service account.
+Then add the key to the service account and save the credentials.json file to the jupyter environment.
+then chatgpt for connection via api. 
+---
+MySQL DB Connection with Python
+import mysql.connector as sql
+db_connection = sql.connect(
+    host='prod-corporate.cluster-cjbifvsxxi4u.ap-south-1.rds.amazonaws.com',
+    port= '3306', 
+    database='db_orion', 
+    user='prernagiri', 
+    password='PROD@#Db456pr'
+)
+
+query = "your query like sql"
+df = pd.read_sql_query(query,db_connection)
